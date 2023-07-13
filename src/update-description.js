@@ -17,6 +17,7 @@ async function getRepoDescription(owner, repo) {
     repo
   });
   const repoDescription = response.data.description;
+  console.log(`repoDescription: ${repoDescription}`)
   return repoDescription;
 }
 function getManifestDescription() {
@@ -24,6 +25,7 @@ function getManifestDescription() {
   try {
     const repoJSONProps = JSON.parse(fs.readFileSync(jsonPath));
     const jsonDescription = repoJSONProps.description;
+    console.log(`jsonDescription: ${jsonDescription}`)
     return jsonDescription;
   } catch (e) {
   }
@@ -46,9 +48,10 @@ function getManifestDescription() {
     console.log(`Checking if the description has been defined`)
     console.log(`description: ${description}`)
     const isEmpty = (description.length == undefined)
+    console.log(`isEmpty: ${isEmpty}`)
     return isEmpty;
   }
-  async function checkAndUpdateDescription(owner, repo) {
+async function checkAndUpdateDescription(owner, repo) {
     console.log(`Attempting to update description for ${repo}`)
     try {
       const repoDescription = await getRepoDescription(owner, repo);
