@@ -1,0 +1,17 @@
+name: 'Update Repository Description'
+description: 'Use the integration manifest to update the repository description if empty'
+inputs:
+  input-file: 
+    description: 'Integration Manifest with description property'
+    required: false
+    default: './integration-manifest.json'
+  repo-token: 
+    description: 'GitHub Auth Token'
+    required: true
+
+outputs:
+  dbg-out: 
+    description: 'Debug output'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
