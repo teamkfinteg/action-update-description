@@ -12095,6 +12095,7 @@ async function getRepoDescription(owner, repo) {
     repo
   });
   const { description } = response.data;
+  console.log(response)
   console.log(`description: ${description}`)
   return description;
 }
