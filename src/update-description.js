@@ -55,10 +55,10 @@ function getManifestDescription() {
 async function checkAndUpdateDescription(owner, repo) {
     console.log(`Attempting to update description for ${repo}`)
     try {
-      const repoDescription = await getRepoDescription(owner, repo);
+      const repoDescription = getRepoDescription(owner, repo);
       if (!checkIfEmptyDescription(repoDescription)) {
         console.log(`Update ${repo} description: ${repoDescription}`);
-        await updateRepoDescription(owner, repo);
+        updateRepoDescription(owner, repo);
         }
     } catch (e) {
       console.log(e.message)
