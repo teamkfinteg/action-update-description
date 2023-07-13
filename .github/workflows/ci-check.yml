@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.TEST_ACTION_GH_PAT}}
+          repo-token: ${{ secrets.TEST_ACTION_GH_PAT}}
       - name: Read description
         id: read
         uses: ./ # Uses an action in the root directory
