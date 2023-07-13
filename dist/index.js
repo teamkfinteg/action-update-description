@@ -12107,7 +12107,7 @@ function getManifestDescription() {
     return jsonDescription;
   } catch (e) {
   }
-
+}
   async function updateRepoDescription(owner, repo) {
     try {
       const description = getManifestDescription()
@@ -12141,7 +12141,6 @@ async function checkAndUpdateDescription(owner, repo) {
       console.log(e.message)
     }
   }
-}
 
 checkAndUpdateDescription(owner, repo)
 
