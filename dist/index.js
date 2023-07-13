@@ -12088,7 +12088,7 @@ const github = new Octokit({ auth: token });
 const { owner, repo } = context.repo;
 async function getRepoDescription(owner, repo) {
   console.log(`Getting description for Repo: ${repo}`);
-  const { data } = await octokit.repos.get({
+  const { data } = await github.repos.get({
     owner,
     repo
   });
@@ -12111,7 +12111,7 @@ function getManifestDescription() {
 
 async function updateRepoDescription(owner, repo, description) {
   try {
-    const response = await octokit.request('PATCH /repos/{owner}/{repo}', {
+    const response = await github.request('PATCH /repos/{owner}/{repo}', {
       owner,
       repo,
       description
