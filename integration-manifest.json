@@ -4,7 +4,7 @@
   "name": "WinCertStore Orchestrator",
   "status": "production",
   "link_github": true,
-  "description": "Update the repository description derived from json property",
+  "description": "This repository contains an action which will update the repository description derived from json property",
   "about": {
     "orchestrator": {
       "UOFramework": "10.1",
