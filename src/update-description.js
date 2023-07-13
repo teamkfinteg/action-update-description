@@ -16,9 +16,9 @@ async function getRepoDescription(owner, repo) {
     owner,
     repo
   });
-  const repoDescription = response.data.description;
-  console.log(`repoDescription: ${repoDescription}`)
-  return repoDescription;
+  const { description } = response.data;
+  console.log(`description: ${description}`)
+  return description;
 }
 function getManifestDescription() {
   console.log(`Getting description from manifest: ${jsonPath}`);
@@ -47,7 +47,7 @@ function getManifestDescription() {
   function checkIfEmptyDescription(description) {
     console.log(`Checking if the description has been defined`)
     console.log(`description: ${description}`)
-    const isEmpty = (description.length == undefined)
+    const isEmpty = (description == null)
     console.log(`isEmpty: ${isEmpty}`)
     return isEmpty;
   }
