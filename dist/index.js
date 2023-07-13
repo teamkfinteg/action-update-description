@@ -12136,7 +12136,7 @@ async function checkAndUpdateDescription(owner, repo) {
       const repoDescription = getRepoDescription(owner, repo);
       if (!checkIfEmptyDescription(repoDescription)) {
         console.log(`Update ${repo} description: ${repoDescription}`);
-        updateRepoDescription(owner, repo);
+        await updateRepoDescription(owner, repo);
         }
     } catch (e) {
       console.log(e.message)
